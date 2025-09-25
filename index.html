@@ -5,74 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Global Food Agro</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo.png">
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Header with drawer menu -->
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Global Food Agro Logo">
+      <img src="images/logo.jpg" alt="Global Food Agro Logo">
       <h1>Global Food Agro</h1>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
-    </nav>
-    <div class="social-icons">
-      <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
-      <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="icons/x.svg" alt="X"></a>
-    </div>
+    <button class="menu-toggle">☰</button>
   </header>
 
-  <section id="home">
+  <!-- Drawer Menu -->
+  <nav class="drawer">
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About Us</a>
+    <div class="social-icons">
+      <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="images/X.jpg" alt="X"></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
     <h2>Welcome to Global Food Agro</h2>
     <p>Fresh and healthy food delivered to your doorstep.</p>
   </section>
 
-  <section id="categories">
+  <!-- Categories Section -->
+  <section class="categories">
     <h2>Categories</h2>
-    <div class="categories">
-      <button class="filter-btn" data-category="all">All</button>
-      <button class="filter-btn" data-category="dairy">Dairy</button>
-      <button class="filter-btn" data-category="fruits">Fruits</button>
-      <button class="filter-btn" data-category="vegetables">Vegetables</button>
-      <button class="filter-btn" data-category="packed">Packed Items</button>
+    <div class="category-grid">
+      <div class="category">
+        <img src="images/dairy.jpg" alt="Dairy">
+        <h3>Dairy</h3>
+      </div>
+      <div class="category">
+        <img src="images/fruits.jpg" alt="Fruits">
+        <h3>Fruits</h3>
+      </div>
+      <div class="category">
+        <img src="images/vegetables.jpg" alt="Vegetables">
+        <h3>Vegetables</h3>
+      </div>
+      <div class="category">
+        <img src="images/packed.jpg" alt="Packed Items">
+        <h3>Packed Items</h3>
+      </div>
     </div>
   </section>
 
-  <section id="products">
+  <!-- Products Section -->
+  <section class="products">
     <h2>Products</h2>
-    <input type="text" id="search" placeholder="Search products...">
-    <select id="sort">
-      <option value="default">Sort by</option>
-      <option value="price-asc">Price: Low to High</option>
-      <option value="price-desc">Price: High to Low</option>
-    </select>
-    <div class="product-list"></div>
-  </section>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Global Food Agro is committed to providing the highest quality food products across categories including dairy, fruits, vegetables, and packed items.</p>
-  </section>
-
-  <footer>
-    <p>📍 <a href="https://maps.google.com?q=Shop+No.112+First+Floor,+Royal+Platinum,+Canal+Road,+Nr.+Kartariya+Workshop,+Palanpur+Gam,+Surat+-+395009" target="_blank">
-      Shop No.112 First Floor, Royal Platinum, Canal Road, Nr. Kartariya Workshop, Palanpur Gam, Surat - 395009
-    </a></p>
-    <p>📞 <a href="tel:+919624093440">9624093440</a></p>
-    <p>✉️ <a href="mailto:batti440@gmail.com">batti440@gmail.com</a></p>
-    <div class="social-icons">
-      <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
-      <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="icons/x.svg" alt="X"></a>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/milk.jpg" alt="Milk">
+        <h3>Milk</h3>
+        <p>Fresh cow milk</p>
+        <p>₹50</p>
+      </div>
+      <div class="product-card">
+        <img src="images/cheese.jpg" alt="Cheese">
+        <h3>Cheese</h3>
+        <p>Organic cheese</p>
+        <p>₹120</p>
+      </div>
+      <div class="product-card">
+        <img src="images/apple.jpg" alt="Apple">
+        <h3>Apple</h3>
+        <p>Red apples</p>
+        <p>₹80</p>
+      </div>
+      <div class="product-card">
+        <img src="images/banana.jpg" alt="Banana">
+        <h3>Banana</h3>
+        <p>Sweet bananas</p>
+        <p>₹40</p>
+      </div>
+      <div class="product-card">
+        <img src="images/tomato.jpg" alt="Tomato">
+        <h3>Tomato</h3>
+        <p>Fresh tomatoes</p>
+        <p>₹30</p>
+      </div>
+      <div class="product-card">
+        <img src="images/onion.jpg" alt="Onion">
+        <h3>Onion</h3>
+        <p>Organic onions</p>
+        <p>₹35</p>
+      </div>
+      <div class="product-card">
+        <img src="images/biscuits.jpg" alt="Biscuits">
+        <h3>Biscuits</h3>
+        <p>Crunchy biscuits</p>
+        <p>₹60</p>
+      </div>
+      <div class="product-card">
+        <img src="images/juice.jpg" alt="Juice">
+        <h3>Juice</h3>
+        <p>Fruit juice</p>
+        <p>₹90</p>
+      </div>
     </div>
-  </footer>
-
-  <script src="script.js"></script>
+  </section>
 </body>
 </html>
