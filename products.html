@@ -3,54 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - My Company</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Global Food Agro - Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fdf9;
+      color: #222;
+    }
+    .drawer {
+      transition: transform 0.32s cubic-bezier(.2,.9,.2,1);
+    }
+    .drawer.open {
+      transform: translateX(0);
+    }
+    .drawer-overlay {
+      transition: opacity 0.28s ease;
+      background: rgba(0,0,0,0.42);
+    }
+  </style>
 </head>
-<body>
+<body class="pt-[72px] sm:pt-[72px]">
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo"><img src="logo.jpg" alt="Company Logo"></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="categories.html">Categories</a></li>
-      <li><a href="products.html" class="active">Products</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-r from-green-700 to-blue-800 text-white shadow-lg">
+    <div class="flex items-center gap-3">
+      <!-- Hamburger menu toggle -->
+      <button id="menu-toggle" class="flex flex-col justify-between w-[30px] h-5 bg-transparent border-none cursor-pointer">
+        <span class="block h-[3px] w-full bg-white rounded-sm transition-all duration-300 transform-gpu"></span>
+        <span class="block h-[3px] w-full bg-white rounded-sm transition-all duration-300 transform-gpu"></span>
+        <span class="block h-[3px] w-full bg-white rounded-sm transition-all duration-300 transform-gpu"></span>
+      </button>
 
-  <!-- Products Section -->
-  <section class="products">
-    <h1>Our Products</h1>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="product1.jpg" alt="Product 1">
-        <h3>Smartphone</h3>
-        <p>$499</p>
-      </div>
-      <div class="product-card">
-        <img src="product2.jpg" alt="Product 2">
-        <h3>Headphones</h3>
-        <p>$99</p>
-      </div>
-      <div class="product-card">
-        <img src="product3.jpg" alt="Product 3">
-        <h3>Wrist Watch</h3>
-        <p>$150</p>
-      </div>
+      <!-- Brand logo and name -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.jpg" alt="Global Food Agro logo" class="h-10 w-10 object-contain rounded-md p-1 bg-white bg-opacity-10">
+        <span class="text-xl font-bold whitespace-nowrap leading-none">Global Food Agro</span>
+      </a>
     </div>
-  </section>
+
+    <!-- Right-side CTA -->
+    <div class="hidden sm:block">
+      <a class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl font-semibold shadow-md transition duration-300 hover:scale-105" href="products.html">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & overlay -->
+  <div id="drawer" class="fixed top-0 left-0 z-50 h-full w-[260px] bg-gradient-to-b from-blue-800 to-green-800 text-white p-6 shadow-xl -translate-x-full">
+    <nav class="flex flex-col gap-4">
+      <a href="index.html" class="block py-2 px-3 rounded-lg text-lg font-medium transition duration-300 hover:bg-white hover:bg-opacity-10">Home</a>
+      <a href="categories.html" class="block py-2 px-3 rounded-lg text-lg font-medium transition duration-300 hover:bg-white hover:bg-opacity-10">Categories</a>
+      <a href="products.html" class="block py-2 px-3 rounded-lg text-lg font-medium transition duration-300 hover:bg-white hover:bg-opacity-10">Products</a>
+      <a href="about.html" class="block py-2 px-3 rounded-lg text-lg font-medium transition duration-300 hover:bg-white hover:bg-opacity-10">About Us</a>
+      <a href="contact.html" class="block py-2 px-3 rounded-lg text-lg font-medium transition duration-300 hover:bg-white hover:bg-opacity-10">Contact</a>
+    </nav>
+  </div>
+  <div id="drawer-overlay" class="fixed inset-0 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- Main content -->
+  <main>
+    <!-- Products Section -->
+    <section class="py-7">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center mb-5">Our Fresh Products</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+
+          <!-- Product Card 1 -->
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="milk.jpg" alt="Milk" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Milk</h3>
+            <p class="text-sm text-gray-600 mb-2">Fresh cow milk</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹50</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <!-- Product Card 2 -->
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="cheese.jpg" alt="Cheese" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Cheese</h3>
+            <p class="text-sm text-gray-600 mb-2">Organic cheese</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹120</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <!-- Product Card 3 -->
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="apple.jpg" alt="Apple" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Apple</h3>
+            <p class="text-sm text-gray-600 mb-2">Red apples</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹80</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <!-- Product Card 4 -->
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="banana.jpg" alt="Banana" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Banana</h3>
+            <p class="text-sm text-gray-600 mb-2">Sweet bananas</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹40</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <!-- Additional Products -->
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="https://placehold.co/400x300/a3e635/43485c?text=Carrots" alt="Carrots" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Carrots</h3>
+            <p class="text-sm text-gray-600 mb-2">Organic fresh carrots</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹60</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="https://placehold.co/400x300/fecaca/5a1313?text=Tomatoes" alt="Tomatoes" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Tomatoes</h3>
+            <p class="text-sm text-gray-600 mb-2">Juicy red tomatoes</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹70</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="https://placehold.co/400x300/fde047/5a4208?text=Potatoes" alt="Potatoes" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Potatoes</h3>
+            <p class="text-sm text-gray-600 mb-2">Farm fresh potatoes</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹35</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="https://placehold.co/400x300/94a3b8/1e2124?text=Eggs" alt="Eggs" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Eggs</h3>
+            <p class="text-sm text-gray-600 mb-2">Free-range eggs</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹90</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+          <article class="flex flex-col w-[200px] bg-white rounded-xl p-3 shadow-md transition duration-300 hover:scale-105">
+            <img src="https://placehold.co/400x300/fcd34d/6e330c?text=Bread" alt="Bread" class="w-full h-[120px] object-cover rounded-lg mb-2">
+            <h3 class="text-lg font-semibold">Bread</h3>
+            <p class="text-sm text-gray-600 mb-2">Artisanal loaf</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <span class="text-lg font-bold text-green-700">₹65</span>
+              <button class="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-semibold transition duration-300 hover:scale-105">Add to Cart</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 My Company. All Rights Reserved.</p>
-    <div class="social-icons">
-      <a href="#"><img src="instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="X.jpg" alt="X"></a>
+  <footer class="bg-gradient-to-r from-green-700 to-blue-800 text-white py-8 mt-8">
+    <div class="container mx-auto px-4 flex flex-wrap justify-between gap-4">
+      <!-- Contact Info -->
+      <div class="flex-1 min-w-[200px]">
+        <p class="mb-2 font-semibold">Contact Us</p>
+        <p class="text-sm mb-1"><strong>Address:</strong>
+          <a class="hover:underline" href="https://www.google.com/maps/search/?api=1&query=Shop+No.112+First+Floor,+Royal+Platinum,+Canal+Road,+Nr.+Kartariya+Workshop,+Palanpur+Gam,+Surat+-+395009" target="_blank" rel="noopener">
+            Shop No.112 First Floor, Royal Platinum, Canal Road, Nr. Kartariya Workshop, Palanpur Gam, Surat - 395009
+          </a>
+        </p>
+        <p class="text-sm mb-1"><strong>Phone:</strong> <a class="hover:underline" href="tel:9624093440">9624093440</a></p>
+        <p class="text-sm mb-1"><strong>Email:</strong> <a class="hover:underline" href="mailto:batti440@gmail.com">batti440@gmail.com</a></p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="flex-1 min-w-[200px]">
+        <p class="font-semibold mb-2">Follow Us</p>
+        <div class="flex items-center gap-2">
+          <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram" class="w-7 h-7 hover:scale-110 transition-transform"></a>
+          <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook" class="w-7 h-7 hover:scale-110 transition-transform"></a>
+          <a href="#" aria-label="X"><img src="X.jpg" alt="X" class="w-7 h-7 hover:scale-110 transition-transform"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-sm opacity-90 mt-4">
+      <small>&copy; <span id="year"></span> Global Food Agro • All rights reserved.</small>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set the current year in the footer
+      const yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // Handle the mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('drawer-overlay');
+
+      const toggleMenu = () => {
+        drawer.classList.toggle('open');
+        overlay.classList.toggle('open');
+      };
+
+      menuToggle.addEventListener('click', toggleMenu);
+      overlay.addEventListener('click', toggleMenu);
+
+      // Handle header padding on resize
+      const setBodyPadding = () => {
+        const headerHeight = document.querySelector('header').offsetHeight;
+        document.body.style.paddingTop = `${headerHeight}px`;
+      };
+
+      // Set padding on initial load and window resize
+      setBodyPadding();
+      window.addEventListener('resize', setBodyPadding);
+    });
+  </script>
 </body>
 </html>
