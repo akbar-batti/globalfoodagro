@@ -1,3 +1,4 @@
+/* ===== Global Styles ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,14 +6,18 @@ body {
   color: #333;
 }
 
-/* Header */
+/* ===== Header ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #4CAF50; /* Green */
+  background: #4CAF50;
   color: white;
   padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -27,21 +32,23 @@ header {
 .menu-toggle {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 28px;
   color: white;
   cursor: pointer;
 }
 
-/* Drawer Menu */
+/* ===== Drawer Menu (Left Sidebar) ===== */
 .drawer {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 220px;
+  left: -250px; /* hidden by default */
+  width: 250px;
   height: 100%;
   background: #2E7D32; /* Dark Green */
   padding: 20px;
-  transition: 0.3s;
+  transition: left 0.3s;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 .drawer a {
@@ -56,26 +63,25 @@ header {
   color: #64B5F6; /* Blue hover */
 }
 
+/* When drawer is open */
 .drawer.open {
   left: 0;
 }
 
-.social-icons {
-  margin-top: 30px;
-}
-.social-icons img {
-  width: 25px;
-  margin-right: 10px;
+/* Optional: push content when drawer opens */
+body.drawer-open {
+  margin-left: 250px;
+  transition: margin-left 0.3s;
 }
 
-/* Hero */
+/* ===== Hero Section ===== */
 .hero {
   text-align: center;
-  padding: 50px 20px;
+  padding: 100px 20px 50px; /* top padding to account for fixed header */
   background: #E8F5E9;
 }
 
-/* Categories */
+/* ===== Categories Section ===== */
 .categories {
   padding: 20px;
   text-align: center;
@@ -95,6 +101,11 @@ header {
   padding: 10px;
   width: 150px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.category:hover {
+  transform: translateY(-5px);
 }
 
 .category img {
@@ -102,7 +113,7 @@ header {
   border-radius: 8px;
 }
 
-/* Products */
+/* ===== Products Section ===== */
 .products {
   padding: 20px;
   text-align: center;
@@ -122,9 +133,68 @@ header {
   width: 180px;
   padding: 15px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
 .product-card img {
   width: 100%;
   border-radius: 8px;
+}
+
+/* ===== Footer Section ===== */
+footer {
+  background: #2E7D32;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #64B5F6;
+}
+
+.footer-contact p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.footer-social {
+  margin-top: 20px;
+}
+
+.footer-social a img {
+  width: 30px;
+  margin: 0 10px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+
+.footer-social a img:hover {
+  transform: scale(1.2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .category-grid, .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body.drawer-open {
+    margin-left: 0; /* optional on mobile */
+  }
+
+  .drawer {
+    width: 200px;
+  }
 }
