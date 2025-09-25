@@ -3,51 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Categories - My Company</title>
+  <title>Categories - Global Food Agro</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo"><img src="logo.jpg" alt="Company Logo"></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="categories.html" class="active">Categories</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
-
-  <!-- Categories Section -->
-  <section class="categories">
-    <h1>Shop by Categories</h1>
-    <div class="category-grid">
-      <div class="category-card">
-        <img src="category1.jpg" alt="Category 1">
-        <h3>Electronics</h3>
-      </div>
-      <div class="category-card">
-        <img src="category2.jpg" alt="Category 2">
-        <h3>Fashion</h3>
-      </div>
-      <div class="category-card">
-        <img src="category3.jpg" alt="Category 3">
-        <h3>Home & Living</h3>
-      </div>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-left">
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="index.html" class="brand" aria-label="Global Food Agro home">
+        <img src="logo.png" alt="Global Food Agro logo" class="brand-logo" />
+        <span class="brand-name">Global Food Agro</span>
+      </a>
     </div>
-  </section>
+
+    <div class="header-right">
+      <a class="btn-cta" href="products.html">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="drawer" aria-hidden="true">
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="drawer-overlay" tabindex="-1"></div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero section for Categories -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Shop by Categories</h1>
+        <p class="hero-sub">Explore a wide range of fresh and organic items.</p>
+      </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="categories">
+      <div class="container">
+        <h2>Available Categories</h2>
+        <div class="category-grid">
+
+          <div class="category">
+            <img src="dairy.jpg" alt="Dairy products" />
+            <h3>Dairy</h3>
+            <p>Milk, cheese, butter & more.</p>
+            <a href="products.html" class="btn-small">Explore</a>
+          </div>
+
+          <div class="category">
+            <img src="fruits.jpg" alt="Fruits" />
+            <h3>Fruits</h3>
+            <p>Fresh and seasonal fruits.</p>
+            <a href="products.html" class="btn-small">Explore</a>
+          </div>
+
+          <div class="category">
+            <img src="vegetables.jpg" alt="Vegetables" />
+            <h3>Vegetables</h3>
+            <p>Green and healthy vegetables.</p>
+            <a href="products.html" class="btn-small">Explore</a>
+          </div>
+
+          <div class="category">
+            <img src="packed.jpg" alt="Packed items" />
+            <h3>Packed Items</h3>
+            <p>Snacks, dry fruits & packaged goods.</p>
+            <a href="products.html" class="btn-small">Explore</a>
+          </div>
+
+          <!-- Add more categories if needed -->
+
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 My Company. All Rights Reserved.</p>
-    <div class="social-icons">
-      <a href="#"><img src="instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="X.jpg" alt="X"></a>
+    <div class="container footer-grid">
+      <div class="footer-contact">
+        <p><strong>Address:</strong>
+          <a href="https://www.google.com/maps/search/?api=1&query=Shop+No.112+First+Floor,+Royal+Platinum,+Canal+Road,+Nr.+Kartariya+Workshop,+Palanpur+Gam,+Surat+-+395009" target="_blank" rel="noopener">
+            Shop No.112 First Floor, Royal Platinum, Canal Road, Nr. Kartariya Workshop, Palanpur Gam, Surat - 395009
+          </a>
+        </p>
+        <p><strong>Phone:</strong> <a href="tel:9624093440">9624093440</a></p>
+        <p><strong>Email:</strong> <a href="mailto:batti440@gmail.com">batti440@gmail.com</a></p>
+      </div>
+
+      <div class="footer-social">
+        <p>Follow us</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
+          <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook"></a>
+          <a href="#" aria-label="X"><img src="X.jpg" alt="X"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© <span id="year"></span> Global Food Agro • All rights reserved.</small>
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
