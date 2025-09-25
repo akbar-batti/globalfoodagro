@@ -19,14 +19,28 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+/* ===== 2.2 Hamburger Menu (Three Lines) ===== */
 .menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
   background: none;
   border: none;
-  font-size: 28px;
-  color: white;
   cursor: pointer;
+  padding: 0;
   margin-right: 15px;
 }
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
 
 .logo {
   display: flex;
